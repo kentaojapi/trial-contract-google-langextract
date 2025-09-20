@@ -1,0 +1,31 @@
+[project]
+name = "trial-contract-google-langextract"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langextract[openai]>=1.0.9",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1",
+]
+
+[tool.ruff]
+line-length = 120
+ignore = [
+    'B008'
+]
+exclude = ["contract_key_point_recognizer_services"]
+
+[tool.ruff.lint]
+select = ["B", "SIM", "I"]
+
+[tool.ruff.format]
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint.isort]
+force-wrap-aliases = true
+combine-as-imports = true
